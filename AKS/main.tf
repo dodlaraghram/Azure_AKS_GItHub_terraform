@@ -1,10 +1,10 @@
 # Generate random resource group name
-/*
+
 resource "random_pet" "rg_name" {
   prefix = var.resource_group_name_prefix
 }
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "demorg" {
   location = var.resource_group_location
   name     = random_pet.rg_name.id
 }
@@ -40,8 +40,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     }
   }
   network_profile {
-    network_plugin    = "kubenet"
+    network_plugin    = "azure"
     load_balancer_sku = "standard"
   }
 }
-*/
