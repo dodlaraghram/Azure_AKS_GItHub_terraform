@@ -20,10 +20,10 @@ terraform {
     }
   }
    backend "azurerm" {
-    #resource_group_name   = "terraform-storage-rg"
-    #storage_account_name  = "terraformstatexlrwdrzs"
-    #container_name        = "tfstatefiles"
-    #key                   = "terraform-custom-vnet.tfstate"
+    resource_group_name   = "azureterraformkube"
+    storage_account_name  = "devstoreabcstatefile"
+    container_name        = "demoterraformkubefile"
+    key                   = "terraform-custom-vnet.tfstate"
   }  
 }
 
