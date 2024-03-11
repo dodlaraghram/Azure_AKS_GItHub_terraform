@@ -20,7 +20,7 @@ resource "random_pet" "azurerm_kubernetes_cluster_dns_prefix" {
 resource "azurerm_kubernetes_cluster" "k8s" {
   location            = azurerm_resource_group.rg.location
   name                = random_pet.azurerm_kubernetes_cluster_name.id
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = azurerm_resource_group.demorg.name
   dns_prefix          = random_pet.azurerm_kubernetes_cluster_dns_prefix.id
 
   identity {
