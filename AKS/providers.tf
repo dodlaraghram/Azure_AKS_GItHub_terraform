@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">=1.0"
+  required_version = "~>1.5.0"
 
   required_providers {
     azapi = {
@@ -19,14 +19,12 @@ terraform {
       version = "0.9.1"
     }
   }
-  backend "remote" {
-		hostname = "app.terraform.io"
-		organization = "CloudQuickLabs"
-
-		workspaces {
-			name = "AzureAKSLabs"
-		}
-	}
+   backend "azurerm" {
+    #resource_group_name   = "terraform-storage-rg"
+    #storage_account_name  = "terraformstatexlrwdrzs"
+    #container_name        = "tfstatefiles"
+    #key                   = "terraform-custom-vnet.tfstate"
+  }  
 }
 
 provider "azurerm" {
