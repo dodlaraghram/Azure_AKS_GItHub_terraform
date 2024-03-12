@@ -18,7 +18,7 @@ resource "random_pet" "azurerm_kubernetes_cluster_dns_prefix" {
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
-  location            = azurerm_resource_group.rg.location
+  location            = azurerm_resource_group.demorg.location
   name                = random_pet.azurerm_kubernetes_cluster_name.id
   resource_group_name = azurerm_resource_group.demorg.name
   dns_prefix          = random_pet.azurerm_kubernetes_cluster_dns_prefix.id
@@ -40,7 +40,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     }
   }
   network_profile {
-    network_plugin    = "azure"
+    network_plugin    = "kubenet"
     load_balancer_sku = "standard"
   }
 }
