@@ -19,12 +19,14 @@ terraform {
       version = "0.9.1"
     }
   }
-   backend "azurerm" {
-    resource_group_name   = "azureterraformkube"
-    storage_account_name  = "devstoreabcstatefile"
-    container_name        = "demoterraformkubefile"
-    key                   = "terraform-custom-vnet.tfstate"
-  }  
+   backend "remote" {
+		hostname = "app.terraform.io"
+		organization = "terraghuram"
+
+		workspaces {
+			name = "azkuberterraformtestws"
+		}
+	}
 }
 
 provider "azurerm" {
