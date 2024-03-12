@@ -36,7 +36,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: |
-         az login --service-principal --username $SERVICE_PRINCIPAL_APP_ID --password $SERVICE_PRINCIPAL_PASSWORD --tenant $SERVICE_PRINCIPAL_TENANT_ID
+         az login --service-principal -u $SERVICE_PRINCIPAL_APP_ID -p $SERVICE_PRINCIPAL_PASSWORD -tenant $SERVICE_PRINCIPAL_TENANT_ID
          terraform init
       
       - name: Terraform Validate
