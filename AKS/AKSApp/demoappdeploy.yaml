@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app2-nginx
-          image: test1rgforaks.azurecr.io/testforbildandpushtoacr
+          image: dodlaraghuram39/dodlaraghuramimage:v1
           ports:
             - containerPort: 80
 ---
