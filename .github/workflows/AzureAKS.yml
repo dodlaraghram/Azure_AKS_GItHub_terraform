@@ -58,12 +58,11 @@ jobs:
 
       - name: Terraform Output
         run: terraform output
-
       - name: Deploy Application
         run: |
           az aks get-credentials -n "cluster-up-snail" -g "demorg-blessed-boxer"
           kubectl apply -f ./AKSApp/demoappdeploy.yaml
           sleep 40
       #    kubectl get service store-front
-          rm -rf ~/.kube
+      #    rm -rf ~/.kube
 
