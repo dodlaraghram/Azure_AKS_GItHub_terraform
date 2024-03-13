@@ -1,8 +1,8 @@
 name: Create Azure AKS With Terraform
 on:
-# push:
-  # branches: master
-   workflow_dispatch:
+ push:
+   branches: master
+  # workflow_dispatch:
   
 
 permissions:
