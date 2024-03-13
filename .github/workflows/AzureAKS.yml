@@ -61,8 +61,8 @@ jobs:
 
       #- name: Deploy Application
       #  run: |
-      #    az aks get-credentials -n "cluster-bursting-jennet" -g "rg-refined-swine"
-      #    kubectl apply -f ./AKSApp/aks-store-quickstart.yaml
+      #    az aks get-credentials -n "knownafterapply" -g "knownafterapply"
+      #    kubectl apply -f ./AKSApp/demoappdeploy.yaml
       #    sleep 40
       #    kubectl get service store-front
       #    rm -rf ~/.kube
