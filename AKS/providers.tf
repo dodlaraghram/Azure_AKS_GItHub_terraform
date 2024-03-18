@@ -19,14 +19,12 @@ terraform {
       version = "0.9.1"
     }
   }
-   backend "remote" {
-		hostname = "app.terraform.io"
-		organization = "terraghuram"
-
-		workspaces {
-			name = "azkuberterraformtestws"
-		}
-	}
+   backend "azurerm" {
+      resource_group_name  = "azstore"
+      storage_account_name = "azstoreaccdemotest"
+      container_name       = "aztffilestore"
+      key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
