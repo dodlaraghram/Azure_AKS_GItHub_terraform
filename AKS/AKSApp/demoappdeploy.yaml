@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: dotnetd
-          image: acrbildandpushimage.azurecr.io/webapp:v1
+          image: acrbildandpushimage.azurecr.io/aspcoresample:v1
           ports:
             - containerPort: 80
 ---
