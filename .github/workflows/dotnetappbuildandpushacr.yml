@@ -32,4 +32,15 @@ jobs:
         push: true
         tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/welcometodotnet:v1
         file: build/Dockerfile
+
+ #   - name: docker tag
+ #     run: |
+ #       docker image tag welcometodotnet:v1 acrbildandpushimage.azurecr.io/dotnetappforsas:v1
+
+#    - name: Build the frontend image and push it to ACR
+#      uses: docker/build-push-action@v5
+#      with:
+#       push: true
+#        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/acrbildandpushimage.azurecr.io/dotnetappforsas:v1
+#        file: build/Dockerfile
         
