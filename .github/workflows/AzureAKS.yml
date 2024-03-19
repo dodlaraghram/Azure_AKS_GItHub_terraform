@@ -63,15 +63,15 @@ jobs:
   
       
       # Checkout the repository to the GitHub Actions runner
-      - name: Checkout
-        uses: actions/checkout@v4
+  #    - name: Checkout
+  #      uses: actions/checkout@v4
     
-      - name: 'Docker Login'
-        uses: azure/docker-login@v1
-        with:
-          login-server: acrbildandpushimage.azurecr.io
-          username: acrbildandpushimage
-          password: GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA
+  #    - name: 'Docker Login'
+  #      uses: azure/docker-login@v1
+  #      with:
+  #        login-server: acrbildandpushimage.azurecr.io
+  #        username: acrbildandpushimage
+  #        password: GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA
    
       - name: Build the frontend image and push it to ACR
         uses: docker/build-push-action@v5
@@ -101,9 +101,9 @@ jobs:
    #       password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Deploy Application
         run: |
-      #    az aks get-credentials -n "cluster-up-snail" -g "demorg-blessed-boxer"
-      #    kubectl apply -f ./AKSApp/demoappdeploy.yaml
-      #    sleep 40
+          az aks get-credentials -n "cluster-hardy-catfish" -g "demorg-popular-marten"
+          kubectl apply -f ./AKSApp/demoappdeploy.yaml
+          sleep 40
       #    kubectl get service store-front
       #    rm -rf ~/.kube
       
