@@ -1,7 +1,7 @@
 name: Create Azure AKS With Terraform
 on:
  push:
-   branches: master
+ #  branches: master
   # workflow_dispatch:
   
 
@@ -64,7 +64,7 @@ jobs:
         with:
           image: demorepo/dodla
           tags: v1, latest
-          registry: registry-url.io
+          registry: acrbildandpushimage.azurecr.io
           dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
