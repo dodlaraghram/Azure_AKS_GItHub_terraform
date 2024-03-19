@@ -59,14 +59,35 @@ jobs:
       - name: Terraform Output
         run: terraform output
 
-      - name: acr login
-        run: |
-          docker login acrbildandpushimage.azurecr.io --username acrbildandpushimage --password GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
-          docker build -t demoapp
-          docker tag demoapp acrbildandpushimage.azurecr.io/webapp:v1
-          az acr login --name acrbildandpushimage
-          docker push acrbildandpushimage.azurecr.io/webapp:v1
-       #  az acr login --u acrbildandpushimage -p GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
+     
+  
+      
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      - name: 'Docker Login'
+        uses: azure/docker-login@v1
+        with:
+          login-server: acrbildandpushimage.azurecr.io
+          username: acrbildandpushimage
+          password: GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA
+   
+      - name: Build the frontend image and push it to ACR
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/aspcoresample:${{ github.sha }}
+          file: Azure_AKS_GItHub_terraform/Dockerfile
+
+   #   - name: acr login
+   #     run: |
+   #       docker login acrbildandpushimage.azurecr.io --username acrbildandpushimage --password GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
+   #       docker build -t demoapp
+   #       docker tag demoapp acrbildandpushimage.azurecr.io/webapp:v1
+   #       az acr login --name acrbildandpushimage
+   #       docker push acrbildandpushimage.azurecr.io/webapp:v1
+   #    #  az acr login --u acrbildandpushimage -p GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
         
    #   - uses: mr-smithers-excellent/docker-build-push@v6
    #     name: Build & push Docker image
