@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "dgSpecHash": "FOaOnbL9nnL6r8ji5biEOC0FXugyxdKy3BgFa+Jin1ckOHtKOSQAk5bKVp0Mfe3+X03Hn34vKCZEXtPZWS1wUA==",
+  "success": false,
+  "projectFilePath": "f:\\Azureterraformkubernetes\\dotnetapptobuildanddeploytoacr1803\\build\\src\\dotnet-demoapp.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.ApplicationInsights.AspNetCore (>= 2.17.0)' for 'net6.0'.",
+      "libraryId": "Microsoft.ApplicationInsights.AspNetCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.Identity.Web (>= 1.21.0)' for 'net6.0'.",
+      "libraryId": "Microsoft.Identity.Web",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.Identity.Web.UI (>= 1.21.0)' for 'net6.0'.",
+      "libraryId": "Microsoft.Identity.Web.UI",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.Identity.Web.MicrosoftGraph (>= 1.21.0)' for 'net6.0'.",
+      "libraryId": "Microsoft.Identity.Web.MicrosoftGraph",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 6.0.14)' for 'net6.0'.",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 6.0.14)' for 'net6.0'.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 6.0.14)' for 'net6.0'.",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Host.win-x64 (= 6.0.14)' for 'net6.0'.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
