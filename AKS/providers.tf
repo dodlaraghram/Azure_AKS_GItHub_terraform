@@ -20,7 +20,7 @@ terraform {
     }
   }
    backend "azurerm" {
-      resource_group_name  = "azstore"
+      resource_group_name  = "azdmoacrrg"
       storage_account_name = "azstoreaccdemotest"
       container_name       = "aztffilestore"
       key                  = "terraform.tfstate"
