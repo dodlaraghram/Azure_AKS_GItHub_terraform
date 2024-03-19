@@ -104,6 +104,7 @@ jobs:
           az aks get-credentials -n "cluster-hardy-catfish" -g "demorg-popular-marten"
           kubectl apply -f ./AKSApp/demoappdeploy.yaml
           sleep 40
+          
       #    kubectl get service store-front
       #    rm -rf ~/.kube
       
