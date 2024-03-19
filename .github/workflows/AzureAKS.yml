@@ -77,7 +77,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/aspcoresample:${{ github.sha }}
+          tags: acrbildandpushimage.azurecr.io/aspcoresample:${{ github.sha }}
           file: Azure_AKS_GItHub_terraform/Dockerfile
 
    #   - name: acr login
