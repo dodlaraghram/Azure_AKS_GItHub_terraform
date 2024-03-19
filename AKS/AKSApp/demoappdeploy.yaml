@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app2-nginx-deployment
+  name: app2-dotnet-deployment
   labels:
-    app: app2-nginx
+    app: dotnetd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app2-nginx
+      app: dotnetd
   template:
     metadata:
       labels:
-        app: app2-nginx
+        app: dotnetd
     spec:
       containers:
-        - name: app2-nginx
-          image: dodlaraghuram39/dodlaraghuramimage:v1
+        - name: dotnetd
+          image: acrbildandpushimage.azurecr.io/webapp:v1
           ports:
             - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: app2-nginx-loadbalancer-service
+  name: dotnetd-loadbalancer-service
   labels:
-    app: app2-nginx
+    app: dotnetd
 spec:
   type: LoadBalancer
   selector:
-    app: app2-nginx
+    app: dotnetd
   ports:
     - port: 80
       targetPort: 80
