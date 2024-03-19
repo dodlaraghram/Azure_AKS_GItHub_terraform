@@ -58,9 +58,15 @@ jobs:
 
       - name: Terraform Output
         run: terraform output
+
+      - name: acr login
+        run: |
+          docker login acrbildandpushimage.azurecr.io --username acrbildandpushimage --password GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
+       #  az acr login --u acrbildandpushimage -p GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
         
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
+       
         with:
           image: demorepo/dodla
           tags: v1, latest
