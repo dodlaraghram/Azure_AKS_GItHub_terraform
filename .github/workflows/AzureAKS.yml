@@ -73,12 +73,12 @@ jobs:
   #        username: acrbildandpushimage
   #        password: GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA
    
-      - name: Build the frontend image and push it to ACR
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: acrbildandpushimage.azurecr.io/aspcoresample:${{ github.sha }}
-          file: Azure_AKS_GItHub_terraform/Dockerfile
+  #    - name: Build the frontend image and push it to ACR
+  #      uses: docker/build-push-action@v5
+  #      with:
+  #        push: true
+  #        tags: acrbildandpushimage.azurecr.io/aspcoresample:${{ github.sha }}
+  #        file: Azure_AKS_GItHub_terraform/Dockerfile
 
    #   - name: acr login
    #     run: |
