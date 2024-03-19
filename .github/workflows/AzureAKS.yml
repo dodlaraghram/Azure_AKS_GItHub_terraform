@@ -62,7 +62,7 @@ jobs:
       - name: acr login
         run: |
           docker login acrbildandpushimage.azurecr.io --username acrbildandpushimage --password GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
-          docker build . -t demoapp 
+          docker build -t demoapp .
           docker tag demoapp acrbildandpushimage.azurecr.io/webapp:v1
           az acr login --name acrbildandpushimage
           docker push acrbildandpushimage.azurecr.io/webapp:v1
