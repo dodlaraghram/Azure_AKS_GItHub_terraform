@@ -62,18 +62,22 @@ jobs:
       - name: acr login
         run: |
           docker login acrbildandpushimage.azurecr.io --username acrbildandpushimage --password GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
+          docker build . -t demoapp 
+          docker tag demoapp acrbildandpushimage.azurecr.io/webapp:v1
+          az acr login --name acrbildandpushimage
+          docker push acrbildandpushimage.azurecr.io/webapp:v1
        #  az acr login --u acrbildandpushimage -p GgoliZc8PoHX6YDlThMSuREHG8VEBl5lvmqjLqqtLA+ACRCvexiC
         
-      - uses: mr-smithers-excellent/docker-build-push@v6
-        name: Build & push Docker image
+   #   - uses: mr-smithers-excellent/docker-build-push@v6
+   #     name: Build & push Docker image
        
-        with:
-          image: demorepo/dodla
-          tags: v1, latest
-          registry: acrbildandpushimage.azurecr.io
-          dockerfile: Dockerfile.ci
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+   #     with:
+   #       image: demorepo/dodla
+   #       tags: v1, latest
+   #       registry: acrbildandpushimage.azurecr.io
+   #       dockerfile: Dockerfile.ci
+   #       username: ${{ secrets.DOCKER_USERNAME }}
+   #       password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Deploy Application
         run: |
       #    az aks get-credentials -n "cluster-up-snail" -g "demorg-blessed-boxer"
